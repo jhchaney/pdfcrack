@@ -8,4 +8,4 @@ ENV CHAR_SET abcdefghjklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 ENV FILE_NAME default.pdf
 VOLUME /pdf
 
-CMD pdfcrack -f /pdf/$FILE_NAME -m $MAX_LENGTH -n $MIN_LENGTH -c $CHAR_SET
+CMD pdfcrack -f /pdf/$FILE_NAME -m $MAX_LENGTH -n $MIN_LENGTH -c $CHAR_SET -o

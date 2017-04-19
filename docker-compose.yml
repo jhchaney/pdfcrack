@@ -1,12 +1,29 @@
 version: '2'
 services: 
   pdfcrack:
-    build: .
+    image: jhchaney/pdfcrack
     volumes: 
     - ./pdf:/pdf
     environment:
-    - MAX_LENGTH=9
-    - MIN_LENGTH=4
+    - MAX_LENGTH=16
+    - MIN_LENGTH=10
     - FILE_NAME=form01.pdf
-    - CHAR_SET=abcdets123
-    
+    - CHAR_SET=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+  pdfcrack_easy:
+    image: jhchaney/pdfcrack
+    volumes:
+    - ./pdf:/pdf
+    environment:
+    - MAX_LENGTH=6
+    - MIN_LENGTH=1
+    - FILE_NAME=form01.pdf
+    - CHAR_SET=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+  pdfcrack_middle:
+    image: jhchaney/pdfcrack
+    volumes:
+    - ./pdf:/pdf
+    environment:
+    - MAX_LENGTH=10
+    - MIN_LENGTH=7
+    - FILE_NAME=form01.pdf
+    - CHAR_SET=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
