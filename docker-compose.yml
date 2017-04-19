@@ -1,0 +1,12 @@
+version: '2'
+services: 
+  pdfcrack:
+    build: .
+    volumes: 
+    - ./pdf:/pdf
+    environment:
+    - MAX_LENGTH=9
+    - MIN_LENGTH=4
+    - FILE_NAME=form01.pdf
+    - CHAR_SET=abcdets123
+    
